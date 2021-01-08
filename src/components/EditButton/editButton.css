@@ -1,0 +1,15 @@
+.editButton {
+    padding:  10px 80px;
+    border: 0;
+    border-radius: 25px;
+    font-size: 1.3rem;
+    background-color: rgb(120, 120, 121);
+    cursor:grab;
+    color: rgb(230, 230, 230);
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.editButton:hover {
+    background-color: rgb(73, 73, 73);
+}
