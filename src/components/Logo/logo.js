@@ -1,5 +1,4 @@
 import React from 'react';
-// import foodChooserLogo from '/public/images/foodChooserLogo.png';
 import './logo.css';
 
 const Logo = () => {
