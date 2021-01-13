@@ -5,7 +5,7 @@ const Logo = () => {
 
  	return(
 		<div className="logoContainer" >
-			<img className="mainLogo" alt='food-chooser-logo' src={'/images/foodChooserLogo.png'} />
+			<img className="mainLogo" alt='food-chooser-logo' src={'${process.env.PUBLIC_URL}/images/foodChooserLogo.png'} />
 		</div>
 		);
 }
