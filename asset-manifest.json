@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Cebarnsley/react-food-chooser/static/css/main.d07f7f4f.chunk.css",
+    "main.js": "/Cebarnsley/react-food-chooser/static/js/main.30af1746.chunk.js",
+    "main.js.map": "/Cebarnsley/react-food-chooser/static/js/main.30af1746.chunk.js.map",
+    "runtime-main.js": "/Cebarnsley/react-food-chooser/static/js/runtime-main.564cc371.js",
+    "runtime-main.js.map": "/Cebarnsley/react-food-chooser/static/js/runtime-main.564cc371.js.map",
+    "static/js/2.a86f1f52.chunk.js": "/Cebarnsley/react-food-chooser/static/js/2.a86f1f52.chunk.js",
+    "static/js/2.a86f1f52.chunk.js.map": "/Cebarnsley/react-food-chooser/static/js/2.a86f1f52.chunk.js.map",
+    "static/js/3.733b6e10.chunk.js": "/Cebarnsley/react-food-chooser/static/js/3.733b6e10.chunk.js",
+    "static/js/3.733b6e10.chunk.js.map": "/Cebarnsley/react-food-chooser/static/js/3.733b6e10.chunk.js.map",
+    "index.html": "/Cebarnsley/react-food-chooser/index.html",
+    "static/css/main.d07f7f4f.chunk.css.map": "/Cebarnsley/react-food-chooser/static/css/main.d07f7f4f.chunk.css.map",
+    "static/js/2.a86f1f52.chunk.js.LICENSE.txt": "/Cebarnsley/react-food-chooser/static/js/2.a86f1f52.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.564cc371.js",
+    "static/js/2.a86f1f52.chunk.js",
+    "static/css/main.d07f7f4f.chunk.css",
+    "static/js/main.30af1746.chunk.js"
+  ]
+}
