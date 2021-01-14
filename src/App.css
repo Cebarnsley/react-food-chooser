@@ -27,6 +27,10 @@
   padding: 0px 20px;
 }
 
+button {
+  margin: 10px;
+}
+
 .editButton {
   padding:  10px 80px;
   border: 0;
@@ -117,7 +121,7 @@
 }
 
 .deleteButton {
-  /* margin: 10px; */
+  margin: 0px;
   margin-left: auto;
   /* padding: 0px 5px; */
   border: 0;
@@ -130,10 +134,15 @@
 .inputArea {
   padding: 10px;
   background-color:rgb(247, 133, 92);
- position: sticky; 
+  position: sticky; 
   bottom: 0;
   margin: 0;
   border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: max-content;
+  
 }
 
 .inputTextArea {
@@ -150,6 +159,7 @@
   padding: 10px;
   color: rgb(237, 236, 235);
   background-color: rgb(73, 122, 155);
+  margin: 0;
 }
 
 .submitButton:hover {
