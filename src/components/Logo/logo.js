@@ -1,12 +1,12 @@
 import React from 'react';
 import  './logo.css';
-import '../Logo/foodChooserLogo.png';
+import foodChooserLogo from  '../../Images/foodChooserLogo.png';
 
 const Logo = () => {
 
  	return(
 		<div className="logoContainer" >
-			<img className="mainLogo" alt='food-chooser-logo' src={'https://cebarnsley.github.io/react-food-chooser2/images/foodChooserLogo.png'} />
+			<img className="mainLogo" alt='food-chooser-logo' src={foodChooserLogo} />
 		</div>
 		);
 }
