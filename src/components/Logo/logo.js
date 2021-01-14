@@ -5,7 +5,7 @@ const Logo = () => {
 
  	return(
 		<div className="logoContainer" >
-			<img className="mainLogo" alt='food-chooser-logo' src={'/react-food-chooser2/foodChooserLogo.png'} />
+			<img className="mainLogo" alt='food-chooser-logo' src={'/react-food-chooser2/images/foodChooserLogo.png'} />
 		</div>
 		);
 }
