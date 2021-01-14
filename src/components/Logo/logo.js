@@ -1,5 +1,6 @@
 import React from 'react';
 import  './logo.css';
+import '../Logo/foodChooserLogo.png';
 
 const Logo = () => {
 
