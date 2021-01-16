@@ -93,13 +93,13 @@ function App() {
                       }
                   )}
                       
+                     
+
+                    </div>
                     <div className="inputArea">
                       <input value={inputValue} onChange={(event) => setInputValue(event.target.value)}   type="text" placeholder="Add more food..." className="inputTextArea" />
                       <button type="submit" className="submitButton"  onClick={() => handleAddButtonClick()}>Add</button>
                     </div>
-
-                    </div>
-
                 </div>
               </Modal>
 
