@@ -8,18 +8,18 @@ import './App.css';
 function App() {
 
   const initialList = [
-		{ name: "Chinese"},
-		{ name: "Indian"},
-		{ name: "Pizza"},
-		{ name: "Burgers"},
-		{ name: "Nando's"},
-		{ name: "Italian"}
+		{ id: 1, name: "Chinese"},
+		{ id: 2, name: "Indian"},
+		{ id: 3, name: "Pizza"},
+		{ id: 4, name: "Burgers"},
+		{ id: 5, name: "Nando's"},
+		{ id: 6, name: "Italian"}
 	];
 
   const [items, setItems] = useState(initialList);
   const [inputValue, setInputValue] = useState('');
   const [randomItem, setRandomItem] = useState(function generateRandomInteger(){
-    return Math.floor(Math.random() * 6);
+    return Math.floor(Math.random() * items.length);
  })
   const [result, setResult] = useState('You should eat...');
 
@@ -27,13 +27,15 @@ function App() {
 
   const handleAddButtonClick = () => {
 		const newItem = {
-			name: inputValue,
+      id: items.length +1,
+      name: inputValue
 		};
 	
 		const newItems = [...items, newItem];
 	
 		setItems(newItems);
-		setInputValue('');
+    setInputValue('');
+    console.log(items);
 	};
 
 
@@ -47,7 +49,6 @@ function App() {
 
   function generateRandomNumber () {
    
-
       if (items.length >= 1) {
 
       const random = Math.floor(Math.random() * items.length);
@@ -84,12 +85,12 @@ function App() {
                   <button className="closeWindowButton" onClick={hide}>&times;</button>
                 
                   
-                  <div className="list" >
-                      {items.map((item) => {
+                  <div className="list">
+                      {items.map((item, id) => {
 
                         return (
                         
-                          <div className='itemName'>
+                          <div className='itemName' key={id}>
                             <p>{item.name}</p>
                             <button className="deleteButton" name={item.name} onClick={handleRemoveItem}>&times;</button>
                           </div>
