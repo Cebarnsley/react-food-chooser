@@ -1,4 +1,4 @@
-import React, {   useState } from "react";
+import React, {  useState } from "react";
 import Header from './components/Header/header';
 import Logo from './components/Logo/logo';
 import ToggleContent from './components/ToggleContent/toggleContent';
@@ -18,8 +18,12 @@ function App() {
 
   const [items, setItems] = useState(initialList);
   const [inputValue, setInputValue] = useState('');
-  const [randomNumber, setRandomNumber] = useState(0);
+  const [randomItem, setRandomItem] = useState(function generateRandomInteger(){
+    return Math.floor(Math.random() * 6);
+ })
   const [result, setResult] = useState('You should eat...');
+
+  
 
   const handleAddButtonClick = () => {
 		const newItem = {
@@ -32,6 +36,7 @@ function App() {
 		setInputValue('');
 	};
 
+
 	
 	
 	const handleRemoveItem = e => {
@@ -40,14 +45,17 @@ function App() {
 	};
 
 
-  function GenerateRandomNumber () {
-    
-   if (items.length >= 1) {
+  function generateRandomNumber () {
+   
+
+      if (items.length >= 1) {
+
       const random = Math.floor(Math.random() * items.length);
-          
-          
-      setRandomNumber(random);
-      setResult(items[randomNumber].name);
+    
+        
+      setRandomItem(random);
+      setResult(items[randomItem].name);
+      
 
     } else {
         return null;
@@ -55,10 +63,7 @@ function App() {
             
   };
 
-  
-  
 
-  
 
   return (
     <div className="App">
@@ -108,7 +113,7 @@ function App() {
           />
          
             
-            <button className="goButton" onClick={GenerateRandomNumber}>Go!</button>
+            <button className="goButton" onClick={generateRandomNumber}>Go!</button>
             
 
           </div>
