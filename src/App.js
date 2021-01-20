@@ -22,12 +22,16 @@ function App() {
     return Math.floor(Math.random() * items.length);
  })
   const [result, setResult] = useState('You should eat...');
+  
+  
+
 
   
 
+
   const handleAddButtonClick = () => {
 		const newItem = {
-      id: items.length +1,
+      id: items.length,
       name: inputValue
 		};
 	
@@ -38,7 +42,11 @@ function App() {
     console.log(items);
 	};
 
-
+  const handleKeypress = e => {
+  if (e.keyCode === 13) {
+    handleAddButtonClick();
+  }
+};
 	
 	
 	const handleRemoveItem = e => {
@@ -74,8 +82,9 @@ function App() {
         <p className="resultsText">{result}</p>
 
           <div className="editGoButtons"> 
-            
+          
             <ToggleContent
+            
             toggle={show => <button className="editButton" onClick={show}>Edit</button>}
             content={hide => (
 
@@ -103,7 +112,7 @@ function App() {
 
                     </div>
                     <div className="inputArea">
-                      <input value={inputValue} onChange={(event) => setInputValue(event.target.value)}   type="text" placeholder="Add more food..." className="inputTextArea" />
+                      <input value={inputValue} onChange={(event) => setInputValue(event.target.value)}  onKeyPress={handleKeypress} type="text" placeholder="Add more food..." className="inputTextArea" />
                       <button type="submit" className="submitButton"  onClick={() => handleAddButtonClick()}>Add</button>
                     </div>
                 </div>

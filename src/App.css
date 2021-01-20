@@ -8,7 +8,7 @@
 }
 
 .resultsText {
-  font-size: 2rem;
+  font-size: 2.3rem;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   margin: 0;
@@ -16,7 +16,6 @@
 
 .container {
   height: 98vh;
-  /* margin: 5px; */
   margin-left: 5px;
   margin-right: 5px;
   display: flex;
@@ -32,27 +31,30 @@ button {
 }
 
 .editButton {
-  padding:  10px 80px;
-  border: 0;
+  padding:  5px 80px;
+  border: 2px solid  rgb(209, 112, 77);
   border-radius: 25px;
-  font-size: 1.3rem;
-  background-color: rgb(120, 120, 121);
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: inherit;
   cursor:grab;
-  color: rgb(230, 230, 230);
+  color: rgb(209, 112, 77);
   font-family: 'Poppins', sans-serif;
 
 }
 
 .editButton:hover {
-  background-color: rgb(73, 73, 73);
+  border: 2px solid  rgb(175, 79, 45);
+  color: rgb(175, 79, 45);
 }
 
 .goButton {
-  padding: 10px 80px;
-  border: 0;
+  padding: 5px 80px;
+  border: 2px solid   rgb(209, 112, 77);
   border-radius: 25px;
-  font-size: 1.3rem;
-  background-color: rgb(204, 110, 75);
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: rgb(209, 112, 77);
   cursor:grab;
   color: rgb(230, 230, 230);
   font-family: 'Poppins', sans-serif;
@@ -60,6 +62,7 @@ button {
 
 .goButton:hover {
   background-color: rgb(175, 79, 45);
+  border: 2px solid  rgb(175, 79, 45);
   
 }
 
