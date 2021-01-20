@@ -41,7 +41,18 @@ function App() {
    
   };
   
+  // onKeyPress={(e) => {
+  //   if (e.charCode === 13) {
+  //     alert("yooo");
+  //   }
+  // }}
 
+ const handleKeyPress = e => {
+    // We pass the new value of the text when calling onAccept
+    if (e.key === "Enter") {
+      handleAddButtonClick();
+    }
+  }
 	
 	const handleRemoveItem = e => {
 		const name = e.target.getAttribute("name")
@@ -106,7 +117,7 @@ function App() {
 
                     </div>
                     <div className="inputArea" >
-                      <input value={inputValue} onChange={(event) => setInputValue(event.target.value)}  type="text" placeholder="Add more options..." className="inputTextArea" />
+                      <input value={inputValue} onKeyPress={handleKeyPress} onChange={(event) => setInputValue(event.target.value)}  type="text" placeholder="Add more options..." className="inputTextArea" />
                       <button type="submit" className="submitButton"  onClick={() => handleAddButtonClick()}>Add</button>
                     </div>
                 </div>
