@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/react-food-chooser2/static/css/main.0a22c7b9.chunk.css",
-    "main.js": "/react-food-chooser2/static/js/main.3c1b98e2.chunk.js",
-    "main.js.map": "/react-food-chooser2/static/js/main.3c1b98e2.chunk.js.map",
+    "main.css": "/react-food-chooser2/static/css/main.90e81151.chunk.css",
+    "main.js": "/react-food-chooser2/static/js/main.46979a38.chunk.js",
+    "main.js.map": "/react-food-chooser2/static/js/main.46979a38.chunk.js.map",
     "runtime-main.js": "/react-food-chooser2/static/js/runtime-main.20c22fbe.js",
     "runtime-main.js.map": "/react-food-chooser2/static/js/runtime-main.20c22fbe.js.map",
     "static/js/2.a86f1f52.chunk.js": "/react-food-chooser2/static/js/2.a86f1f52.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.733b6e10.chunk.js": "/react-food-chooser2/static/js/3.733b6e10.chunk.js",
     "static/js/3.733b6e10.chunk.js.map": "/react-food-chooser2/static/js/3.733b6e10.chunk.js.map",
     "index.html": "/react-food-chooser2/index.html",
-    "static/css/main.0a22c7b9.chunk.css.map": "/react-food-chooser2/static/css/main.0a22c7b9.chunk.css.map",
+    "static/css/main.90e81151.chunk.css.map": "/react-food-chooser2/static/css/main.90e81151.chunk.css.map",
     "static/js/2.a86f1f52.chunk.js.LICENSE.txt": "/react-food-chooser2/static/js/2.a86f1f52.chunk.js.LICENSE.txt",
     "static/media/foodChooserLogo.7f6b602e.png": "/react-food-chooser2/static/media/foodChooserLogo.7f6b602e.png"
   },
   "entrypoints": [
     "static/js/runtime-main.20c22fbe.js",
     "static/js/2.a86f1f52.chunk.js",
-    "static/css/main.0a22c7b9.chunk.css",
-    "static/js/main.3c1b98e2.chunk.js"
+    "static/css/main.90e81151.chunk.css",
+    "static/js/main.46979a38.chunk.js"
   ]
 }
