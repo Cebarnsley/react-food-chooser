@@ -22,32 +22,26 @@ function App() {
     return Math.floor(Math.random() * items.length);
  })
   const [result, setResult] = useState('You should eat...');
-  
-  
-
 
   
-
 
   const handleAddButtonClick = () => {
-		const newItem = {
-      id: items.length,
-      name: inputValue
-		};
-	
-		const newItems = [...items, newItem];
-	
-		setItems(newItems);
-    setInputValue('');
-    console.log(items);
-	};
+    
+    if ( inputValue.length >0) {
+      const newItem = {
+        id: items.length,
+        name: inputValue
+      };
+    
+      const newItems = [...items, newItem];
+    
+      setItems(newItems);
+      setInputValue('');
+    }
+   
+  };
+  
 
-  const handleKeypress = e => {
-  if (e.keyCode === 13) {
-    handleAddButtonClick();
-  }
-};
-	
 	
 	const handleRemoveItem = e => {
 		const name = e.target.getAttribute("name")
@@ -111,8 +105,8 @@ function App() {
                      
 
                     </div>
-                    <div className="inputArea">
-                      <input value={inputValue} onChange={(event) => setInputValue(event.target.value)}  onKeyPress={handleKeypress} type="text" placeholder="Add more food..." className="inputTextArea" />
+                    <div className="inputArea" >
+                      <input value={inputValue} onChange={(event) => setInputValue(event.target.value)}  type="text" placeholder="Add more options..." className="inputTextArea" />
                       <button type="submit" className="submitButton"  onClick={() => handleAddButtonClick()}>Add</button>
                     </div>
                 </div>
