@@ -1,7 +1,6 @@
-import React, {  useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Header from './components/Header/header';
 import Logo from './components/Logo/logo';
-import ToggleContent from './components/ToggleContent/toggleContent';
 import Modal from './components/Modal/modal';
 import './App.css';
 
@@ -18,12 +17,42 @@ function App() {
 
   const [items, setItems] = useState(initialList);
   const [inputValue, setInputValue] = useState('');
-  const [randomItem, setRandomItem] = useState(function generateRandomInteger(){
-    return Math.floor(Math.random() * items.length);
- })
+  const [randomItem, setRandomItem] = useState(function generateRandomInteger(){ return Math.floor(Math.random() * items.length);})
   const [result, setResult] = useState('You should eat...');
+  const [showModal, setShowModal] = useState(false);
+  const node = useRef();
 
+
+  // toggle show/hide list array modal
   
+  const toggleModal = () => {
+    setShowModal(current => !current)
+    console.log(showModal) 
+  }
+
+  // handle click outside modal to close it
+
+  useEffect(() => {
+    if (showModal) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showModal]);
+
+  const handleClickOutside = (e) => {
+    if (node.current && node.current.contains(e.target)) {
+      
+      return;
+    }
+    setShowModal(false);
+  };
+
+
+  // button to submit new items to list array
 
   const handleAddButtonClick = () => {
     
@@ -41,24 +70,24 @@ function App() {
    
   };
   
-  // onKeyPress={(e) => {
-  //   if (e.charCode === 13) {
-  //     alert("yooo");
-  //   }
-  // }}
+  
+  // uses Enter button keypress to run function to add new item to list array
 
  const handleKeyPress = e => {
-    // We pass the new value of the text when calling onAccept
     if (e.key === "Enter") {
       handleAddButtonClick();
     }
   }
+
+  // delete button to remove item from list array
 	
 	const handleRemoveItem = e => {
 		const name = e.target.getAttribute("name")
     	setItems(items.filter(item => item.name !== name));
 	};
 
+
+  // generates random food item from list array
 
   function generateRandomNumber () {
    
@@ -80,23 +109,19 @@ function App() {
 
 
   return (
-    <div className="App">
-      <div className="container">
+    <div className="App" >
+      <div className="container" >
         <Header />
         <Logo />
         <p className="resultsText">{result}</p>
 
           <div className="editGoButtons"> 
+          <button className="editButton" onClick={toggleModal}>Edit</button>
           
-            <ToggleContent
-            
-            toggle={show => <button className="editButton" onClick={show}>Edit</button>}
-            content={hide => (
-
-
-              <Modal>
-                <div className="listModal">
-                  <button className="closeWindowButton" onClick={hide}>&times;</button>
+          {showModal === true ? (
+              <Modal >
+                <div className="listModal" ref={node}>
+                  <button className="closeWindowButton" onClick={toggleModal}>&times;</button>
                 
                   
                   <div className="list">
@@ -123,10 +148,9 @@ function App() {
                 </div>
               </Modal>
 
-              
+          ) : (
+            null
             )}
-          />
-         
             
             <button className="goButton" onClick={generateRandomNumber}>Go!</button>
             
