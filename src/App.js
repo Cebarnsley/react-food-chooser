@@ -4,7 +4,7 @@ import Logo from './components/Logo/logo';
 import Modal from './components/Modal/modal';
 import './App.css';
 
-function App() {
+function App(){
 
   const initialList = [
 		{ id: 1, name: "Chinese"},
@@ -13,21 +13,21 @@ function App() {
 		{ id: 4, name: "Burgers"},
 		{ id: 5, name: "Nando's"},
 		{ id: 6, name: "Italian"}
-	];
-
+  ];
+  
   const [items, setItems] = useState(initialList);
   const [inputValue, setInputValue] = useState('');
-  const [randomItem, setRandomItem] = useState(function generateRandomInteger(){ return Math.floor(Math.random() * items.length);})
   const [result, setResult] = useState('You should eat...');
   const [showModal, setShowModal] = useState(false);
   const node = useRef();
+
+ 
 
 
   // toggle show/hide list array modal
   
   const toggleModal = () => {
-    setShowModal(current => !current)
-    console.log(showModal) 
+    setShowModal(current => !current);
   }
 
   // handle click outside modal to close it
@@ -66,18 +66,23 @@ function App() {
     
       setItems(newItems);
       setInputValue('');
+      
     }
    
   };
   
-  
+
+
+
   // uses Enter button keypress to run function to add new item to list array
 
  const handleKeyPress = e => {
     if (e.key === "Enter") {
       handleAddButtonClick();
     }
-  }
+  };
+
+
 
   // delete button to remove item from list array
 	
@@ -89,20 +94,14 @@ function App() {
 
   // generates random food item from list array
 
-  function generateRandomNumber () {
-   
+  function GenerateRandomNumber (){
       if (items.length >= 1) {
 
-      const random = Math.floor(Math.random() * items.length);
-    
-        
-      setRandomItem(random);
-      setResult(items[randomItem].name);
-      
-
-    } else {
-        return null;
-    }
+        const  randomItem = (Math.floor(Math.random() * items.length));
+        setResult(items[randomItem].name);
+  
+      }
+  
             
   };
 
@@ -152,7 +151,7 @@ function App() {
             null
             )}
             
-            <button className="goButton" onClick={generateRandomNumber}>Go!</button>
+            <button className="goButton" onClick={GenerateRandomNumber}>Go!</button>
             
 
           </div>
