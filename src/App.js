@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+
 import Header from './components/Header/header';
 import Logo from './components/Logo/logo';
 import Modal from './components/Modal/modal';
@@ -108,17 +109,17 @@ function App(){
 
 
   return (
-    <div className="App" >
+    <div className="foodApp" >
       <div className="container" >
         <Header />
         <Logo />
         <p className="resultsText">{result}</p>
 
           <div className="editGoButtons"> 
-          <button className="editButton" onClick={toggleModal}>Edit</button>
+          <button className="editButton"  onClick={toggleModal}>Edit</button>
           
           {showModal === true ? (
-              <Modal >
+              <Modal id="modal" >
                 <div className="listModal" ref={node}>
                   <button className="closeWindowButton" onClick={toggleModal}>&times;</button>
                 
@@ -129,8 +130,8 @@ function App(){
                         return (
                         
                           <div className='itemName' key={id}>
-                            <p>{item.name}</p>
-                            <button className="deleteButton" name={item.name} onClick={handleRemoveItem}>&times;</button>
+                            <p className="item">{item.name}</p>
+                            <button className="deleteButton"  name={item.name} onClick={handleRemoveItem}>&times;</button>
                           </div>
                           
                         )
@@ -142,7 +143,7 @@ function App(){
                     </div>
                     <div className="inputArea" >
                       <input value={inputValue} onKeyPress={handleKeyPress} onChange={(event) => setInputValue(event.target.value)}  type="text" placeholder="Add more options..." className="inputTextArea" />
-                      <button type="submit" className="submitButton"  onClick={() => handleAddButtonClick()}>Add</button>
+                      <button type="submit" id="submitButton" className="submitButton"  onClick={() => handleAddButtonClick()}>Add</button>
                     </div>
                 </div>
               </Modal>
